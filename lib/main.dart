@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(WelcomePage());
+}
+
+class WelcomePage extends StatelessWidget {
+  const WelcomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: 'Code Vidhya',
       // used by the OS task switcher
 
@@ -13,8 +20,8 @@ void main() {
       home: SafeArea(
         child: MyScaffold(),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class MyScaffold extends StatelessWidget {
@@ -30,7 +37,7 @@ class MyScaffold extends StatelessWidget {
         children: [
           Container(
             child: Image.asset(
-              'assets/images/CodeVidhya.png',
+              'assets/images/CodeStar.png',
               width: 250,
             ),
             padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
@@ -38,7 +45,7 @@ class MyScaffold extends StatelessWidget {
           Container(
             child: Center(
               child: Text(
-                'Welcome to CodeVidhya',
+                'Welcome to codeStar',
                 style: GoogleFonts.roboto(
                   textStyle: TextStyle(
                     fontSize: 32,
@@ -92,10 +99,13 @@ class MyScaffold extends StatelessWidget {
                 ),
               ),
               child: Text('CONTINUE')),
-             Center(
-              child: Text('I ALREADY HAVE AN ACCOUNT', style: Theme.of(context).textTheme.displayLarge?.copyWith(color: Colors.red),),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
             ),
-
+            onPressed: () {},
+            child: const Text('I ALREADY HAVE AN ACCOUNT'),
+          ),
         ],
       ),
     );

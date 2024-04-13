@@ -8,11 +8,10 @@ class quiz2 extends StatelessWidget{
   const quiz2({super.key});
   @override
   Widget build(BuildContext context) {
-    // Material is a conceptual piece
-    // of paper on which the UI appears.
     return Scaffold(
       // Column is a vertical, linear layout.
-      body: Column(
+      body: SafeArea(
+        child:Column(
         children: [
           Container(
             child: SvgPicture.asset(
@@ -72,7 +71,7 @@ class quiz2 extends StatelessWidget{
               onPressed: () => Navigator.pushNamed(context, '/rank3'),
               child: Text('NEXT')),
         ],
-      ),
+      ),),
     );
   }
 }

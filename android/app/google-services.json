@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "887565525205",
+    "project_id": "my-code-star-project",
+    "storage_bucket": "my-code-star-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887565525205:android:197da0b3bcb379345ac25c",
+        "android_client_info": {
+          "package_name": "com.example.code_vidhya"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXPG6sdsonYbJSdt5a8DaIcNKaNs6thCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

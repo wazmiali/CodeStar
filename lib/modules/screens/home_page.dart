@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 // firebase
 
 class home extends StatelessWidget {
@@ -9,9 +11,19 @@ class home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (FirebaseAuth.instance.currentUser != null) {
-      print(FirebaseAuth.instance.currentUser?.uid);
-    }
+    // final user = FirebaseAuth.instance.currentUser;
+    // if (user != null) {
+    //   user.reload(); // Fetch latest user data
+    //   if (user.emailVerified) {
+    //     final userRef =
+    //         FirebaseFirestore.instance.collection('users').doc(user.uid);
+    //     userRef.update({'isVerified': true});
+    //   } else {
+    //     final userRef =
+    //         FirebaseFirestore.instance.collection('users').doc(user.uid);
+    //     userRef.update({'isVerified': false});
+    //   }
+    // }
 
     return Scaffold(
       body: SafeArea(
@@ -46,9 +58,34 @@ class home extends StatelessWidget {
                       FontWeight.bold, // Adjust the font weight as needed
                 ),
               ),
+
               onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacementNamed(context, '/login');
+                final user = FirebaseAuth.instance.currentUser;
+
+                if (user != null) {
+                  await user.reload();
+                  // Fetch latest user data
+                  final isVerified = user.emailVerified;
+                  if (isVerified) {
+                    // User verified, proceed with logout
+                    if (user != null) {
+                      final userRef = FirebaseFirestore.instance
+                          .collection('users')
+                          .doc(user.uid);
+                      await userRef.update({
+                        'isVerified': isVerified
+                      }); // Update verification status in Firestore
+                      await FirebaseAuth.instance
+                          .signOut(); // Logout user from Firebase Authentication
+                      Navigator.pushReplacementNamed(context, '/login');
+                    }
+                  } else {
+                    await FirebaseAuth.instance
+                        .signOut(); // Logout user from Firebase Authentication
+                    Navigator.pushReplacementNamed(context, '/login');
+                    // User not verified, show a message or handle accordingly
+                  }
+                }
               },
               child: Text('Log out')),
         ]),

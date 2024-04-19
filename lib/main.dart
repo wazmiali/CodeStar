@@ -13,7 +13,7 @@ import 'welcome_page.dart';
 
 import 'authentication/screens/registration_page.dart';
 import 'authentication/screens/login_page.dart';
-
+import 'authentication/screens/email_sent_info.dart';
 // authentication/screens
 import 'modules/screens/home_page.dart';
 // moduels/screens
@@ -46,12 +46,14 @@ class myApp extends StatelessWidget {
         '/register': (BuildContext ctx) => RegisterPage(),
         '/home': (BuildContext ctx) => home(),
         '/login': (BuildContext ctx) => LoginPage(),
+        '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
+
+
       },
       theme: ThemeData(
           colorSchemeSeed: const Color(0xff008fff), useMaterial3: true),
       //above telling SDK to use Meterial3 and generate widget provide by Material 3
       // changing color of colorSchemeSeed the color of buttons and textField outline is changing
-      // TODO: read on Material3 on flutter docs, colorSchemeSeed, and using theme and theme data also test and try useful things
 
       home: WelcomePage(),
     );

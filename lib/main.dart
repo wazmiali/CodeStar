@@ -5,10 +5,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
  // firebase imports
 
-import 'rank_page.dart';
-import 'read_page.dart';
-import 'quiz_page.dart';
-import 'welcome_page.dart';
+import 'appEntery/rank_page.dart';
+import 'appEntery/read_page.dart';
+import 'appEntery/quiz_page.dart';
+import 'appEntery/welcome_page.dart';
 // lib
 
 import 'authentication/screens/registration_page.dart';
@@ -17,6 +17,9 @@ import 'authentication/screens/email_sent_info.dart';
 // authentication/screens
 import 'modules/screens/home_page.dart';
 // moduels/screens
+
+import 'package:google_fonts/google_fonts.dart';
+// google fonts
 
 // custom theme
 // Imported files
@@ -36,9 +39,10 @@ class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Code Vidhya',
       // used by the OS task switcher
-      initialRoute: '/register',
+      initialRoute: '/home',
       routes: {
         '/read1': (BuildContext ctx) => read1(),
         '/quiz2': (BuildContext ctx) => quiz2(),
@@ -51,7 +55,10 @@ class myApp extends StatelessWidget {
 
       },
       theme: ThemeData(
-          colorSchemeSeed: const Color(0xff008fff), useMaterial3: true),
+        fontFamily: GoogleFonts.roboto().fontFamily,
+          colorSchemeSeed: const Color(0xff008fff), useMaterial3: true
+        // I can specify in the starting so I don't have to in each button or page text it applies to all
+      ),
       //above telling SDK to use Meterial3 and generate widget provide by Material 3
       // changing color of colorSchemeSeed the color of buttons and textField outline is changing
 

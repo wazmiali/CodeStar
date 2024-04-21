@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-// Use for support for svg image formats
 
+import '../shared_components/custom_button.dart';
+// custom components
 // Home screen/welcome starts
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -51,32 +51,17 @@ class WelcomePage extends StatelessWidget {
               ),
               margin: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 95),
             ),
-            FilledButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue[5000],
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(7.0), // Adjust the value as needed
-                ),
-                fixedSize: Size.fromWidth(350),
-                padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
-                textStyle: GoogleFonts.roboto(
-                  fontSize: 20, // Adjust the font size as needed
-                  fontWeight: FontWeight.bold, // Adjust the font weight as needed
-                ),
-          
-              ),
+            CustomButton(
+              text: 'CONTINUE',
               onPressed: () => Navigator.pushNamed(context, '/read1'),
-              child: Text('CONTINUE'),
             ),
+
             TextButton(
               style: TextButton.styleFrom(
                 foregroundColor: Colors.blue[900],
                 padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
                 textStyle: GoogleFonts.roboto(
-                  fontSize: 18, // Adjust the font size as needed
-                  // Adjust the font weight as needed
+                  fontSize: 18,
                 ),
               ),
               onPressed: () {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class moduleList extends StatefulWidget {
   const moduleList({Key? key}) : super(key: key);
+  // above is constructor the same constructor as we have in java
 
   @override
   State<moduleList> createState() => _moduleListState();

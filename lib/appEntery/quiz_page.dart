@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // Use for support for svg image formats
 
+import '../shared_components/custom_button.dart';
+// custom components
+
 // quiz2 starts
 class quiz2 extends StatelessWidget{
   const quiz2({super.key});
@@ -49,27 +52,11 @@ class quiz2 extends StatelessWidget{
             ),
             margin: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 90),
           ),
-          FilledButton(
 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue[900],
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                  BorderRadius.circular(7.0), // Adjust the value as needed
-                ),
-                fixedSize: Size.fromWidth(350),
-                padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
-
-                textStyle: GoogleFonts.roboto(
-                  fontSize: 20, // Adjust the font size as needed
-                  fontWeight:
-                  FontWeight.bold, // Adjust the font weight as needed
-                ),
-              ),
-
-              onPressed: () => Navigator.pushNamed(context, '/rank3'),
-              child: Text('NEXT')),
+          CustomButton(
+            text: 'NEXT',
+            onPressed: () => Navigator.pushNamed(context, '/rank3'),
+           ),
         ],
       ),),
     );

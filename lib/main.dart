@@ -48,7 +48,7 @@ class myApp extends StatelessWidget {
         '/quiz2': (BuildContext ctx) => quiz2(),
         '/rank3': (BuildContext ctx) => rank3(),
         '/register': (BuildContext ctx) => RegisterPage(),
-        '/home': (BuildContext ctx) => home(),
+        '/home': (BuildContext ctx) => Home(),
         '/login': (BuildContext ctx) => LoginPage(),
         '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
 
@@ -56,7 +56,8 @@ class myApp extends StatelessWidget {
       },
       theme: ThemeData(
         fontFamily: GoogleFonts.roboto().fontFamily,
-          colorSchemeSeed: const Color(0xff008fff), useMaterial3: true
+          colorSchemeSeed: const Color(0xff008fff),
+          useMaterial3: true
         // I can specify in the starting so I don't have to in each button or page text it applies to all
       ),
       //above telling SDK to use Meterial3 and generate widget provide by Material 3

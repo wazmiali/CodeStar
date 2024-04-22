@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../shared_components/custom_button.dart';
+// custom components
+
 class emailSentInfo extends StatelessWidget {
   const emailSentInfo({super.key});
 
@@ -14,7 +17,7 @@ class emailSentInfo extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 0),
             child: Icon(
               Icons.mark_email_unread_outlined,
-              color: Colors.blue,
+              color: Colors.pink[200],
               size: 200,
             ),
           ),
@@ -30,26 +33,14 @@ class emailSentInfo extends StatelessWidget {
               ),
             ),
           ),
-          FilledButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.pink[500],
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.circular(7.0), // Adjust the value as needed
-                ),
-                fixedSize: Size.fromWidth(350),
-                padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
-                textStyle: GoogleFonts.roboto(
-                  fontSize: 20, // Adjust the font size as needed
-                  fontWeight:
-                      FontWeight.bold, // Adjust the font weight as needed
-                ),
+
+              CustomButton(
+                backgroundColor: Color(0xfff48fb1),
+                text: 'CONTINUE',
+                onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
               ),
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/home');
-              },
-              child: Text('CONTINUE')),
-        ]),
+      ],
+      ),
       ),
     );
   }

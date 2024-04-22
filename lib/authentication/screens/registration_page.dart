@@ -8,6 +8,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 // pub dependencies
 
+
+import '../../shared_components/custom_button.dart';
+// custom components
+
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -180,30 +184,14 @@ class _RegisterPageState extends State<RegisterPage> {
                         height: 50,
                       ),
 
-                      FilledButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                7.0), // Adjust the value as needed
-                          ),
-                          fixedSize: Size.fromWidth(350),
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
-                          textStyle: GoogleFonts.roboto(
-                            fontSize: 20, // Adjust the font size as needed
-                            fontWeight: FontWeight
-                                .bold, // Adjust the font weight as needed
-                          ),
-                        ),
-
+                      CustomButton(
+                         text: 'REGISTER',
                         onPressed: _registerUser,
-
-                        child: Text('REGISTER'),
                       ),
 
                       TextButton(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.blue[900],
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
+                           padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
                           textStyle: GoogleFonts.roboto(
                             fontSize: 18, // Adjust the font size as needed
                             // Adjust the font weight as needed

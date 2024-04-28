@@ -1,3 +1,4 @@
+import 'package:code_vidhya/shared_components/already_account_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,23 +53,15 @@ class WelcomePage extends StatelessWidget {
               margin: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 95),
             ),
             CustomButton(
-              text: 'CONTINUE',
+              text: 'C O N T I N U E',
               onPressed: () => Navigator.pushNamed(context, '/read1'),
             ),
+            SizedBox(height: 10,),
 
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.blue[900],
-                padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),
-                textStyle: GoogleFonts.roboto(
-                  fontSize: 18,
-                ),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              },
-              child: const Text('I ALREADY HAVE AN ACCOUNT'),
-            ),
+            MyTextButton(onTap: () {
+              Navigator.pushNamed(context, '/registerOrLogin');
+            }, text: 'S K I P  T O  R E G I S T E R',),
+
           ],
                 ),
         ),),

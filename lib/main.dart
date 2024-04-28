@@ -1,7 +1,9 @@
+import 'package:code_vidhya/authentication/screens/register_or_login.dart';
 import 'package:flutter/material.dart';
 // Use for support for svg image formats
 
 import 'package:firebase_core/firebase_core.dart';
+import 'authentication/screens/login_page.dart';
 import 'firebase_options.dart';
  // firebase imports
 
@@ -11,16 +13,14 @@ import 'appEntery/quiz_page.dart';
 import 'appEntery/welcome_page.dart';
 // lib
 
-import 'authentication/screens/registration_page.dart';
-import 'authentication/screens/login_page.dart';
 import 'authentication/screens/email_sent_info.dart';
 // authentication/screens
+
 import 'modules/screens/home_page.dart';
-// moduels/screens
+// modules/screens
 
-import 'package:google_fonts/google_fonts.dart';
-// google fonts
-
+import 'theme/dark_mode.dart';
+import 'theme/light_mode.dart';
 // custom theme
 // Imported files
 
@@ -30,11 +30,11 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(myApp());
+  runApp(MyApp());
 }
 
-class myApp extends StatelessWidget {
-  const myApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,28 +42,18 @@ class myApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Code Vidhya',
       // used by the OS task switcher
-      initialRoute: '/home',
+      initialRoute: '/registerOrLogin',
       routes: {
         '/read1': (BuildContext ctx) => read1(),
         '/quiz2': (BuildContext ctx) => quiz2(),
         '/rank3': (BuildContext ctx) => rank3(),
-        '/register': (BuildContext ctx) => RegisterPage(),
+        '/registerOrLogin': (BuildContext ctx) => RegisterOrLogin(),
         '/home': (BuildContext ctx) => Home(),
-        '/login': (BuildContext ctx) => LoginPage(),
         '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
-
-
       },
-      theme: ThemeData(
-        fontFamily: GoogleFonts.roboto().fontFamily,
-          colorSchemeSeed: const Color(0xff008fff),
-          useMaterial3: true
-        // I can specify in the starting so I don't have to in each button or page text it applies to all
-      ),
-      //above telling SDK to use Meterial3 and generate widget provide by Material 3
-      // changing color of colorSchemeSeed the color of buttons and textField outline is changing
-
-      home: WelcomePage(),
+      home: const WelcomePage(),
+      theme: lightMode,
+      darkTheme: darkMode,
     );
   }
 }

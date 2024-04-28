@@ -57,7 +57,7 @@ class rank3 extends StatelessWidget{
 
           CustomButton(
             text: 'Get Started',
-            onPressed: () => Navigator.pushNamed(context, '/register'),
+            onPressed: () => Navigator.pushNamed(context, '/registerOrLogin'),
            ),
 
         ],

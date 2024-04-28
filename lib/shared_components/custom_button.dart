@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({
-    this.text,
-    required this.onPressed,
-    this.backgroundColor = const Color(0xff035fa8), // #01447B 0xff035fa8
-
-  });
 
   final String? text;
   final VoidCallback onPressed;
-  final Color backgroundColor;
+  final Color backgroundColor ;
+  
+  
+  CustomButton({
+    this.text,
+    required this.onPressed,
+    this.backgroundColor = const Color(0xff035fa8), // 0xff035fa8
+
+  });
 
   // final VoidCallback onPressed = (){};
 
@@ -18,10 +20,11 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
 
-      style: ElevatedButton.styleFrom(
+      style: FilledButton.styleFrom(
        backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(7.0),
+            borderRadius: BorderRadius.circular(7),
+            // 12 is much better
           ),
           fixedSize: Size.fromWidth(350), // should be able to change, should be able to change the background color
           padding: EdgeInsetsDirectional.fromSTEB(0, 17, 0, 17),

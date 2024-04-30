@@ -21,7 +21,7 @@ class _HomePageState extends State<Home> {
     });
   }
 
-  final List<Widget> _pages = [moduleList(), profile(), leaderboard()];
+  final List<Widget> _pages = [moduleList(), Profile(), leaderboard()];
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,11 @@ class _HomePageState extends State<Home> {
         currentIndex: _selectedIndex,
         onTap: _navigateButtomBar,
         items: [
+          // module list page
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          // profile page
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          // leaderboard page
           BottomNavigationBarItem(
               icon: Icon(Icons.leaderboard), label: 'Leaderboard'),
         ],

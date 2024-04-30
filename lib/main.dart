@@ -1,16 +1,18 @@
+import 'package:code_vidhya/Profile/screens/profile_page.dart';
+import 'package:code_vidhya/authentication/auth.dart';
 import 'package:code_vidhya/authentication/screens/register_or_login.dart';
+import 'package:code_vidhya/modules/screens/module_list_page.dart';
 import 'package:flutter/material.dart';
 // Use for support for svg image formats
 
 import 'package:firebase_core/firebase_core.dart';
-import 'authentication/screens/login_page.dart';
+import 'Leaderboard/screens/leaderboard_page.dart';
 import 'firebase_options.dart';
  // firebase imports
 
 import 'appEntery/rank_page.dart';
 import 'appEntery/read_page.dart';
 import 'appEntery/quiz_page.dart';
-import 'appEntery/welcome_page.dart';
 // lib
 
 import 'authentication/screens/email_sent_info.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Code Vidhya',
       // used by the OS task switcher
-      initialRoute: '/registerOrLogin',
+      // initialRoute: '/registerOrLogin',
       routes: {
         '/read1': (BuildContext ctx) => read1(),
         '/quiz2': (BuildContext ctx) => quiz2(),
@@ -50,8 +52,18 @@ class MyApp extends StatelessWidget {
         '/registerOrLogin': (BuildContext ctx) => RegisterOrLogin(),
         '/home': (BuildContext ctx) => Home(),
         '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
+        '/authPage' :(BuildContext ctx) => AuthPage(),
+        '/leaderBoard' :(BuildContext ctx) => leaderboard(),
+        '/profilePage' :(BuildContext ctx) => Profile(),
+        '/moduleList' :(BuildContext ctx) => moduleList(),
+
+        /**
+         * THIS IS suppose to be bolder and it is
+         */
+
+        // hii from this comment 
       },
-      home: const WelcomePage(),
+      home: const AuthPage(),
       theme: lightMode,
       darkTheme: darkMode,
     );

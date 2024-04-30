@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'package:code_vidhya/authentication/screens/register_or_login.dart';
+import '../appEntery/welcome_page.dart';
 import '../modules/screens/home_page.dart';
 
 class AuthPage extends StatelessWidget {
@@ -12,11 +12,14 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
+        // check the current state of the auth of the user
         builder: (context, snapshot) {
           if(snapshot.hasData){
+            // if the user is logged in show Home page
             return const Home();
           }else{
-            return RegisterOrLogin();
+            // else show the Welcome page
+            return WelcomePage();
           }
         },
       ),

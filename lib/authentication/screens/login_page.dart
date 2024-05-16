@@ -1,13 +1,10 @@
-import 'package:code_vidhya/helper/helper_functions.dart';
-import 'package:code_vidhya/shared_components/custom_TextFormField.dart';
+import 'package:code_star/helper/helper_functions.dart';
+import 'package:code_star/shared_components/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // firebase
 
 import 'package:flutter/material.dart';
 // material
-
-import 'package:google_fonts/google_fonts.dart';
-// pub dependencies
 
 import '../../shared_components/custom_button.dart';
 // custom components
@@ -36,8 +33,8 @@ class LoginPageState extends State<LoginPage> {
               ));
       try {
         // login the user
-        final userCredential =
-            await FirebaseAuth.instance.signInWithEmailAndPassword(
+
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text,
           password: _passwordController.text,
         );
@@ -56,14 +53,14 @@ class LoginPageState extends State<LoginPage> {
         } else if (e.code == 'wrong-password') {
           print('Wrong password provided for that user.');
         }
-          displayMessageToUser(e.code, context);
+        displayMessageToUser(e.code, context);
       } catch (e) {
         print(e);
       }
     }
   }
 
-  var _isObscured;
+  var _isObscured = false;
 
   @override
   void initState() {
@@ -86,9 +83,6 @@ class LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(40.0),
             child: Column(
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 const Icon(
                   Icons.person_pin,
                   size: 180,
@@ -100,7 +94,9 @@ class LoginPageState extends State<LoginPage> {
                       style: Theme.of(context).textTheme.displaySmall,
                     ),
                   ),
-                  margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                ),
+                SizedBox(
+                  height: 100,
                 ),
                 Form(
                   key: _formKey,
@@ -108,7 +104,7 @@ class LoginPageState extends State<LoginPage> {
                     children: [
                       // Email and password text fields
 
-                      MyTextFormFeild(
+                      MyTextFormField(
                           hintText: 'Email',
                           obscureText: false,
                           controller: _emailController,
@@ -132,7 +128,7 @@ class LoginPageState extends State<LoginPage> {
                         height: 10,
                       ),
 
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Password',
                         obscureText: _isObscured,
                         suffixIcon: IconButton(
@@ -155,16 +151,20 @@ class LoginPageState extends State<LoginPage> {
                         },
                       ),
 
-                      Padding(
-                        padding: const EdgeInsets.only(top: 50.0, bottom: 10.0),
-                        child: CustomButton(
-                          text: 'LOG IN',
-                          onPressed: login,
-                        ),
+                      SizedBox(
+                        height: 50,
                       ),
 
                       CustomButton(
-                        backgroundColor: Color(0xff9d9d9d),
+                        text: 'LOG IN',
+                        onPressed: login,
+                      ),
+
+                      SizedBox(
+                        height: 10,
+                      ),
+                      CustomButton(
+                        backgroundColor: Color(0xff000000),
                         text: 'REGISTER',
                         onPressed: widget.onTap,
                       ),

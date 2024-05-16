@@ -1,4 +1,4 @@
-name: code_vidhya
+name: code_star
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -27,6 +27,19 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  flutter_rename_app_plus3: ^1.2.3
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/images/icon.png"
+
+flutter_rename_app_plus3:
+  application_name: Code Star
+  dart_package_name: code_star
+  ios_bundle_name: Code
+
 
 flutter:
   uses-material-design: true

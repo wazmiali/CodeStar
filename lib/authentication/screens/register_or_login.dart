@@ -1,4 +1,4 @@
-import 'package:code_vidhya/authentication/screens/registration_page.dart';
+import 'package:code_star/authentication/screens/registration_page.dart';
 import 'package:flutter/material.dart';
 
 import 'login_page.dart';

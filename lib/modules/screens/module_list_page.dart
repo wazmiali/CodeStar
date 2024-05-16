@@ -3,24 +3,24 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
-class moduleList extends StatefulWidget {
-  const moduleList({Key? key}) : super(key: key);
+class ModuleList extends StatefulWidget {
+  const ModuleList({Key? key}) : super(key: key);
 
   // above is constructor the same constructor as we have in java
 
   @override
-  State<moduleList> createState() => _moduleListState();
+  State<ModuleList> createState() => _ModuleListState();
 }
 
-class _moduleListState extends State<moduleList> {
+class _ModuleListState extends State<ModuleList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0), // here the desired height
+        preferredSize: Size.fromHeight(130.0), // here the desired height
 
         child: AppBar(
-          toolbarHeight: 100.0,
+          toolbarHeight: 120.0,
           centerTitle: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -29,7 +29,10 @@ class _moduleListState extends State<moduleList> {
           ),
           actions: [
             IconButton(
-                onPressed: () => {FirebaseAuth.instance.signOut()},
+                onPressed: () => {FirebaseAuth.instance.signOut(),
+                Navigator.pushReplacementNamed(context, '/loginOrRegister')
+
+                },
                 icon: Icon(Icons.logout_outlined))
           ],
           titleTextStyle: TextStyle(fontSize: 36),
@@ -37,8 +40,7 @@ class _moduleListState extends State<moduleList> {
           title: Text('M O D U L E S'),
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
@@ -63,14 +65,13 @@ class _moduleListState extends State<moduleList> {
                         // color: const Color(0xff0d47a1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                            color: const Color.fromARGB(255, 13, 71, 161))),
+                            color: const Color.fromARGB(255, 0, 0, 0))),
                   ),
                 ),
               ],
             ),
           ),
         ),
-      ),
     );
   }
 }

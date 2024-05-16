@@ -21,7 +21,7 @@ class _HomePageState extends State<Home> {
     });
   }
 
-  final List<Widget> _pages = [moduleList(), Profile(), leaderboard()];
+  final List<Widget> _pages = [ModuleList(), Profile(), leaderboard()];
 
   @override
   Widget build(BuildContext context) {

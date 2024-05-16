@@ -1,6 +1,3 @@
-import 'package:code_vidhya/helper/helper_functions.dart';
-import 'package:code_vidhya/shared_components/already_account_button.dart';
-import 'package:code_vidhya/shared_components/custom_TextFormField.dart';
 import 'package:flutter/material.dart';
 // material
 
@@ -8,6 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 // firebase
 
+import 'package:code_star/helper/helper_functions.dart';
+import 'package:code_star/shared_components/already_account_button.dart';
+import 'package:code_star/shared_components/custom_text_form_field.dart';
 import '../../shared_components/custom_button.dart';
 // custom components
 
@@ -17,10 +17,10 @@ class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key, required this.onTap}) : super(key: key);
 
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  RegisterPageState createState() => RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -51,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
-// dispose method is a lifeCycle method it is automatically called when wedget is permanetly removed
+  // dispose method is a lifeCycle method it is automatically called when wedget is permanetly removed
 
   // creating user in firebase with the entered information
   Future<void> _registerUser() async {
@@ -98,7 +98,8 @@ class _RegisterPageState extends State<RegisterPage> {
             displayMessageToUser('The password provided is too weak.', context);
             print('The password provided is too weak.');
           } else if (e.code == 'email-already-in-use') {
-          displayMessageToUser('The account already exists for that email.', context);
+            displayMessageToUser(
+                'The account already exists for that email.', context);
             print('The account already exists for that email.');
           }
         } catch (e) {
@@ -114,7 +115,6 @@ class _RegisterPageState extends State<RegisterPage> {
     final firestore = FirebaseFirestore.instance;
 
     // Create a new document or update existing one if desired
-
     await firestore.collection('users').doc(userId).set(
       {
         'id': userId,
@@ -151,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       // user name
 
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Username',
                         obscureText: false,
                         controller: _usernameController,
@@ -163,7 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       // email
 
-                      MyTextFormFeild(
+                      MyTextFormField(
                           hintText: 'Email',
                           obscureText: false,
                           controller: _emailController,
@@ -188,7 +188,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
 
                       //gender
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Gender',
                         obscureText: false,
                         controller: _genderController,
@@ -199,7 +199,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         height: 10,
                       ),
                       // age
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Age',
                         obscureText: false,
                         controller: _ageController,
@@ -220,7 +220,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         height: 10,
                       ),
                       //password
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Password',
                         obscureText: _isObscured,
                         suffixIcon: IconButton(
@@ -247,7 +247,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         height: 10,
                       ),
                       //Confirm password
-                      MyTextFormFeild(
+                      MyTextFormField(
                         hintText: 'Confirm password',
                         obscureText: _isCwObscured,
                         suffixIcon: IconButton(

@@ -1,23 +1,28 @@
-import 'package:code_vidhya/Profile/screens/profile_page.dart';
-import 'package:code_vidhya/authentication/auth.dart';
-import 'package:code_vidhya/authentication/screens/register_or_login.dart';
-import 'package:code_vidhya/modules/screens/module_list_page.dart';
 import 'package:flutter/material.dart';
-// Use for support for svg image formats
+// material
+
+import 'package:code_star/Profile/screens/profile_page.dart';
+// Profile
 
 import 'package:firebase_core/firebase_core.dart';
-import 'Leaderboard/screens/leaderboard_page.dart';
 import 'firebase_options.dart';
  // firebase imports
 
-import 'appEntery/rank_page.dart';
-import 'appEntery/read_page.dart';
-import 'appEntery/quiz_page.dart';
-// lib
+import 'Leaderboard/screens/leaderboard_page.dart';
+// Leaderboard
 
+import 'appEntry/rank_page.dart';
+import 'appEntry/read_page.dart';
+import 'appEntry/quiz_page.dart';
+// appEntery
+
+import 'package:code_star/authentication/auth.dart';
+import 'authentication/screens/login_or_register.dart';
+import 'package:code_star/authentication/screens/register_or_login.dart';
 import 'authentication/screens/email_sent_info.dart';
 // authentication/screens
 
+import 'package:code_star/modules/screens/module_list_page.dart';
 import 'modules/screens/home_page.dart';
 // modules/screens
 
@@ -44,24 +49,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Code Vidhya',
       // used by the OS task switcher
-      // initialRoute: '/registerOrLogin',
+      // initialRoute: '/moduleList',
       routes: {
         '/read1': (BuildContext ctx) => read1(),
         '/quiz2': (BuildContext ctx) => quiz2(),
         '/rank3': (BuildContext ctx) => rank3(),
         '/registerOrLogin': (BuildContext ctx) => RegisterOrLogin(),
+        '/loginOrRegister': (BuildContext ctx) => LoginOrRegister(),
         '/home': (BuildContext ctx) => Home(),
         '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
         '/authPage' :(BuildContext ctx) => AuthPage(),
         '/leaderBoard' :(BuildContext ctx) => leaderboard(),
         '/profilePage' :(BuildContext ctx) => Profile(),
-        '/moduleList' :(BuildContext ctx) => moduleList(),
-
-        /**
-         * THIS IS suppose to be bolder and it is
-         */
-
-        // hii from this comment 
+        '/moduleList' :(BuildContext ctx) => ModuleList(),
       },
       home: const AuthPage(),
       theme: lightMode,

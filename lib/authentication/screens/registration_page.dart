@@ -122,7 +122,9 @@ class RegisterPageState extends State<RegisterPage> {
         'email': _emailController.text,
         'gender': _genderController.text,
         'age': int.parse(_ageController.text),
-        // Ensure successful conversion to int
+        // adding ranks and points as zeros so we can update them later
+        'rank': 0,
+        'points': 0 // Ensure successful conversion to int
       },
     );
   }

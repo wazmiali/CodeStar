@@ -6,7 +6,7 @@ import 'package:code_star/Profile/screens/profile_page.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
- // firebase imports
+// firebase imports
 
 import 'Leaderboard/screens/leaderboard_page.dart';
 // Leaderboard
@@ -28,6 +28,7 @@ import 'modules/screens/home_page.dart';
 
 import 'theme/dark_mode.dart';
 import 'theme/light_mode.dart';
+
 // custom theme
 // Imported files
 
@@ -58,12 +59,13 @@ class MyApp extends StatelessWidget {
         '/loginOrRegister': (BuildContext ctx) => LoginOrRegister(),
         '/home': (BuildContext ctx) => Home(),
         '/emailSentInfo': (BuildContext ctx) => emailSentInfo(),
-        '/authPage' :(BuildContext ctx) => AuthPage(),
-        '/leaderBoard' :(BuildContext ctx) => leaderboard(),
-        '/profilePage' :(BuildContext ctx) => Profile(),
-        '/moduleList' :(BuildContext ctx) => ModuleList(),
+        '/authPage': (BuildContext ctx) => AuthPage(),
+        '/leaderBoard': (BuildContext ctx) => Leaderboard(),
+        '/profilePage': (BuildContext ctx) => Profile(),
+        '/moduleList': (BuildContext ctx) => ModuleList(),
       },
       home: const AuthPage(),
+      // home: Profile(), 
       theme: lightMode,
       darkTheme: darkMode,
     );

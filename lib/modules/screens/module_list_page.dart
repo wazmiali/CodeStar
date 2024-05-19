@@ -16,32 +16,34 @@ class _ModuleListState extends State<ModuleList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(130.0), // here the desired height
-
-        child: AppBar(
-          toolbarHeight: 120.0,
-          centerTitle: true,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(20),
-            ),
+      appBar: AppBar(
+        toolbarHeight: 177.0,
+        centerTitle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
           ),
-          actions: [
-            IconButton(
-                onPressed: () => {FirebaseAuth.instance.signOut(),
-                Navigator.pushReplacementNamed(context, '/loginOrRegister')
+        ),
+        actions: [
+          IconButton(
+              onPressed: () => {FirebaseAuth.instance.signOut(),
+              Navigator.pushReplacementNamed(context, '/loginOrRegister')
 
-                },
-                icon: Icon(Icons.logout_outlined))
-          ],
-          titleTextStyle: TextStyle(fontSize: 36),
-          backgroundColor: Color(0xff035fa8),
-          title: Text('M O D U L E S'),
+              },
+              icon: Icon(Icons.logout_outlined))
+        ],
+        titleTextStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+        backgroundColor: Color.fromARGB(102, 0, 127, 255),
+        title: Padding(
+          padding: const EdgeInsets.only(top:77),
+          child: Text('M O D U L E S'),
         ),
       ),
+
       body: SingleChildScrollView(
+
           child: Center(
+
             child: Column(
               children: [
                 const SizedBox(

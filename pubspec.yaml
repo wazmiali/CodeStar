@@ -45,6 +45,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/CodeStar.png
+    - assets/images/profile_image.png
     - assets/images/quiz.svg
     - assets/images/rank.svg
     - assets/images/read.svg

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class leaderboard extends StatelessWidget {
-  const leaderboard({super.key});
+class Leaderboard extends StatelessWidget {
+  const Leaderboard({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ ThemeData lightMode = ThemeData(
       inversePrimary: Colors.blue.shade800,
     ),
   textTheme: ThemeData.light().textTheme.apply(
-    bodyColor: Colors.blue[800],
+    bodyColor: Colors.black,
     displayColor: Colors.black
       // todo How to specify the fontfamily used
     //

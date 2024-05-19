@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:code_star/shared_components/app_bar_box.dart';
+import 'package:code_star/shared_components/statistics_display_box.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -47,17 +49,7 @@ class Profile extends StatelessWidget {
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(102, 0, 127, 255),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(20.0),
-                                bottomRight: Radius.circular(20.0),
-                              ),
-                            ),
-                            height: 220,
-                          ),
-
+                          AppBarBox(),
                           SizedBox(
                             height: 160,
                           ),
@@ -97,7 +89,7 @@ class Profile extends StatelessWidget {
                           // statistic
 
                           const Padding(
-                            padding: const EdgeInsets.only(left: 20, top: 20),
+                            padding: EdgeInsets.only(left: 20, top: 20),
                             child: Text(
                               'Statistic',
                               style: TextStyle(
@@ -117,70 +109,21 @@ class Profile extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(width: 1),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    width: 160,
-                                    height: 60,
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.bolt,
-                                          size: 50,
-                                          color:
-                                          Color.fromARGB(255, 255, 215, 0),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(right: 10),
-                                          child: Text(
-                                            "${user['points']}xp",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 28),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  StatisticsDisplayBox(
+                                      text: "${user['points']}xp",
+                                      next: Icons.bolt),
                                 ],
                               ),
                               Row(
                                 children: [
-
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(width: 1),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    width: 160,
-                                    height: 60,
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.military_tech,
-                                          size: 45,
-                                          color:
-                                          Color.fromARGB(255, 255, 215, 0),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(right: 10),
-                                          child: Text(
-                                            "#${user['rank']}",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 28),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-
+                                  StatisticsDisplayBox(
+                                      text: "#${user['rank']}",
+                                      next: Icons.military_tech),
                                 ],
                               )
                             ],
-                          )
+                          ),
+
                         ],
                       )),
 

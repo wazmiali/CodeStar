@@ -44,7 +44,6 @@ class Profile extends StatelessWidget {
                   body: Stack(
                     children: [
                       // Your background content
-
                       SingleChildScrollView(
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,11 +79,10 @@ class Profile extends StatelessWidget {
                             height: 10,
                           ),
 
-                          Container(
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 0, 0, 0),
-                            ),
-                            height: 2,
+                          const Divider(
+                            height: 5,
+                            thickness: 2,
+                            color: Colors.grey,
                           ),
                           // statistic
 
@@ -110,7 +108,7 @@ class Profile extends StatelessWidget {
                               Row(
                                 children: [
                                   StatisticsDisplayBox(
-                                      text: "${user['points']}xp",
+                                      text: "${user['points']}XP",
                                       next: Icons.bolt),
                                 ],
                               ),
@@ -123,10 +121,8 @@ class Profile extends StatelessWidget {
                               )
                             ],
                           ),
-
                         ],
                       )),
-
                       Positioned(
                           top: 110.0, // Adjust top offset from the parent
                           left: 75.0, // Adjust left offset from the parent

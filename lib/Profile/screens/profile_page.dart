@@ -97,7 +97,7 @@ class Profile extends StatelessWidget {
                             ),
                           ),
 
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
 
@@ -135,7 +135,9 @@ class Profile extends StatelessWidget {
                         top: 45.0, // Adjust top offset from the parent
                         left: 320.0, // Adjust left offset from the parent
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/settings');
+                            },
                             icon: const Icon(
                               Icons.settings_sharp,
                               size: 40.0,

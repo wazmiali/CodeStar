@@ -79,11 +79,11 @@ class RegisterPageState extends State<RegisterPage> {
           );
           // send email varification link to the user
           await userCredential.user!.sendEmailVerification();
-          print('Email verification link sent!');
+          // Email verification link sent!
 
           // save user data
           await _saveUserData(userCredential.user!.uid);
-
+          if (!mounted) return;
           // stop showing the loading circle
           Navigator.pop(context);
 

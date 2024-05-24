@@ -43,27 +43,33 @@ class _HomePageState extends State<Home> {
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            // Fixed
+          child: Theme(
+            data: Theme.of(context).copyWith(
+              splashColor: Colors.transparent,
+            ),
+            child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              // Fixed
 
-            elevation: 22.0,
-            iconSize: 35.0,
-            enableFeedback: false,
-            selectedItemColor: Color.fromARGB(102, 0, 127, 255),
-            unselectedItemColor: Color.fromARGB(255, 0, 0, 0),
-            currentIndex: _selectedIndex,
-            onTap: _navigateButtonBar,
-            items: [
-              // module list page
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'H O M E'),
-              // profile page
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'P R O F I L E'),
-              // leaderboard page
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.leaderboard), label: 'R A N K'),
-            ],
+              elevation: 22.0,
+              iconSize: 35.0,
+              enableFeedback: false,
+              selectedItemColor: Color.fromARGB(102, 0, 127, 255),
+              unselectedItemColor: Color.fromARGB(255, 0, 0, 0),
+              currentIndex: _selectedIndex,
+              onTap: _navigateButtonBar,
+              items: [
+                // module list page
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home), label: 'H O M E'),
+                // profile page
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), label: 'P R O F I L E'),
+                // leaderboard page
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.leaderboard), label: 'R A N K'),
+              ],
+            ),
           ),
         ),
       ),

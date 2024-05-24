@@ -38,16 +38,17 @@ class LoginPageState extends State<LoginPage> {
           email: _emailController.text,
           password: _passwordController.text,
         );
+        if (!mounted) return;
         // pop loading circle
         Navigator.pop(context);
         // navigate to home page
         Navigator.pushReplacementNamed(context, '/home');
         // when pushReplacementNamed is used we can not go back by clicking back button
       } on FirebaseAuthException catch (e) {
-        // pop loading cicle
+        // pop loading circle
         Navigator.pop(context);
 
-        // display error if cought any
+        // display error if caught any
         if (e.code == 'user-not-found') {
           print('No user found for that email');
         } else if (e.code == 'wrong-password') {
@@ -87,12 +88,10 @@ class LoginPageState extends State<LoginPage> {
                   Icons.person_pin,
                   size: 180,
                 ),
-                Container(
-                  child: Center(
-                    child: Text(
-                      'L O G I N',
-                      style: Theme.of(context).textTheme.displaySmall,
-                    ),
+                Center(
+                  child: Text(
+                    'L O G I N',
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
                 SizedBox(

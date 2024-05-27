@@ -124,16 +124,16 @@ class Profile extends StatelessWidget {
                         ],
                       )),
                       Positioned(
-                          top: 110.0, // Adjust top offset from the parent
-                          left: 75.0, // Adjust left offset from the parent
+                          top: 110.0,
+                          left: 75.0,
                           child: CircleAvatar(
                             maxRadius: 120,
                             backgroundImage:
                                 AssetImage('assets/images/profile_image.png'),
                           )),
                       Positioned(
-                        top: 45.0, // Adjust top offset from the parent
-                        left: 320.0, // Adjust left offset from the parent
+                        top: 45.0,
+                        left: 320.0,
                         child: IconButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/settings');

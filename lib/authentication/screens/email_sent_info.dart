@@ -24,7 +24,7 @@ class emailSentInfo extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(30, 0, 30, 30),
             child: Text(
-              'We have sent a confirmation email to your indox, please confirm your email for future updates from codeStar',
+              'We have sent a confirmation email to your inbox and spam, please confirm your email for future updates from codeStar',
                style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   fontSize: 24,

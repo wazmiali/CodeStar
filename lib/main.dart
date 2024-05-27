@@ -6,7 +6,6 @@ import 'package:code_star/Profile/screens/profile_page.dart';
 // Profile
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'firebase_options.dart';
 // firebase imports
 
@@ -30,8 +29,12 @@ import 'modules/screens/home_page.dart';
 
 import 'theme/dark_mode.dart';
 import 'theme/light_mode.dart';
-
 // custom theme
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:feedback/feedback.dart';
+// pub.dev packages
+
 // Imported files
 
 Future<void> main() async {
@@ -40,7 +43,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(BetterFeedback(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

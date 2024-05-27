@@ -117,7 +117,7 @@ class RegisterPageState extends State<RegisterPage> {
     // Create a new document or update existing one if desired
     await firestore.collection('users').doc(userId).set(
       {
-        'id': userId,
+        'userId': userId,
         'username': _usernameController.text,
         'email': _emailController.text,
         'gender': _genderController.text,
@@ -139,13 +139,13 @@ class RegisterPageState extends State<RegisterPage> {
             child: Column(
               children: [
                 Container(
+                  margin: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 50),
                   child: Center(
                     child: Text(
                       'R E G I S T E R',
                       style: Theme.of(context).textTheme.displaySmall,
                     ),
                   ),
-                  margin: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 50),
                 ),
                 Form(
                   key: _formKey,

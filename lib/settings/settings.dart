@@ -1,11 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:code_star/shared_components/custom_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // firebase
 
-import 'package:flutter/material.dart';
+import 'package:code_star/shared_components/custom_button.dart';
+// shared components
+
+import 'package:feedback/feedback.dart';
+// pub.dev packages
 
 import '../helper/helper_functions.dart';
+
+// helper functions
+
+import 'package:flutter/material.dart';
+
+import '../services/firestore.dart';
 // material
 
 class Settings extends StatefulWidget {
@@ -61,7 +70,16 @@ class _SettingsState extends State<Settings> {
     }
   }
 
-  void feedback() {}
+  void feedback() {
+    // make feedback menu appear when clicked on feedback button
+    BetterFeedback.of(context).show((UserFeedback feedback) async {
+      // after uploading the image successfully with obtain the download URL of the image
+      final String screenshotUrl = await uploadImage(feedback.screenshot);
+
+      // we add the feedback text entered by user and
+      addFeedback(feedback.text, screenshotUrl);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

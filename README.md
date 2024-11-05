@@ -15,7 +15,7 @@ spirit in users and inspire them to Study more in order to preserve and push the
 - You can easily install it from appstore by searching codeStar or just click on this link
 
 ##An example of how to use it or get it running
-- Coming Soon!
+- Comming Soon!
 
 ##The license that the project is offered under
 - Updating Soon
